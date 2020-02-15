@@ -34,7 +34,7 @@ public class Demo_3_JDBC_Concurrent_Increase_X {
 
     private static void increaseX(Connection conn) throws Exception {
 
-        // TODO: start transaction
+        conn.setAutoCommit(false);
 
         int x = readInt(conn, "SELECT x FROM test FOR UPDATE");
         print("Current value: x = " + x);
@@ -42,6 +42,8 @@ public class Demo_3_JDBC_Concurrent_Increase_X {
         conn.prepareStatement("UPDATE test SET test.x=" + (x + 1)).execute();
         x = readInt(conn, "SELECT x FROM test");
         print("Current value: x = " + x);
+
+        conn.commit();
     }
 
     private static int readInt(Connection conn, String sql) throws Exception {
