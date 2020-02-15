@@ -27,11 +27,11 @@ public class Demo_1_JOOQ_Dont_Show_Me_Half_Keyword {
 
         conn.close();
 
-//        startAfter(Duration.ofMillis(100), () -> createKeywordWithURL(jooq));
-//        startAfter(Duration.ofMillis(500), () -> processKeywords(jooq));
+        startAfter(Duration.ofMillis(100), () -> createKeywordWithURL(jooq));
+        startAfter(Duration.ofMillis(500), () -> processKeywords(jooq));
 
-        startAfter(Duration.ofMillis(100), () -> jooq.transaction(tx -> createKeywordWithURL(jooq)));
-        startAfter(Duration.ofMillis(500), () -> jooq.transaction(tx -> processKeywords(jooq)));
+//        startAfter(Duration.ofMillis(100), () -> jooq.transaction(tx -> createKeywordWithURL(jooq)));
+//        startAfter(Duration.ofMillis(500), () -> jooq.transaction(tx -> processKeywords(jooq)));
 
         print("ok");
     }
