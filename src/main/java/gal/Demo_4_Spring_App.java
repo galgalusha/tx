@@ -6,11 +6,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static java.util.logging.LogManager.getLogManager;
-
 @Component("Demo4_starter_app")
 public class Demo_4_Spring_App {
 
